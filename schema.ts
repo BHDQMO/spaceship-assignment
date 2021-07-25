@@ -8,12 +8,14 @@ const {
 } = require("graphql");
 
 interface CommentResult {
+  id: number
   content: string
   author: string
   book: number
 }
 
 interface UserResult {
+  id: number
   author: string
   name: string
   avatar: string
@@ -50,6 +52,10 @@ const CommentType = new GraphQLObjectType({
   description: '...',
 
   fields: () => ({
+    id: {
+      type: GraphQLInt,
+      resolve: (commentResult: CommentResult) => commentResult.id
+    },
     content: {
       type: GraphQLString,
       resolve: (commentResult: CommentResult) => commentResult.content
@@ -68,6 +74,10 @@ const UserType = new GraphQLObjectType({
   description: '...',
 
   fields: () => ({
+    id: {
+      type: GraphQLInt,
+      resolve: (userResult: UserResult) => userResult.id
+    },
     name: {
       type: GraphQLString,
       resolve: (userResult: UserResult) => userResult.author || userResult.name
@@ -84,6 +94,10 @@ const BookType = new GraphQLObjectType({
   description: '...',
 
   fields: () => ({
+    id: {
+      type: GraphQLInt,
+      resolve: (bookResult: BookResult) => bookResult.id
+    },
     name: {
       type: GraphQLString,
       resolve: (bookResult: BookResult) => bookResult.name

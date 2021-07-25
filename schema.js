@@ -41,6 +41,10 @@ var CommentType = new GraphQLObjectType({
     name: 'Comment',
     description: '...',
     fields: function () { return ({
+        id: {
+            type: GraphQLInt,
+            resolve: function (commentResult) { return commentResult.id; }
+        },
         content: {
             type: GraphQLString,
             resolve: function (commentResult) { return commentResult.content; }
@@ -59,6 +63,10 @@ var UserType = new GraphQLObjectType({
     name: 'User',
     description: '...',
     fields: function () { return ({
+        id: {
+            type: GraphQLInt,
+            resolve: function (userResult) { return userResult.id; }
+        },
         name: {
             type: GraphQLString,
             resolve: function (userResult) { return userResult.author || userResult.name; }
@@ -73,6 +81,10 @@ var BookType = new GraphQLObjectType({
     name: 'Book',
     description: '...',
     fields: function () { return ({
+        id: {
+            type: GraphQLInt,
+            resolve: function (bookResult) { return bookResult.id; }
+        },
         name: {
             type: GraphQLString,
             resolve: function (bookResult) { return bookResult.name; }
