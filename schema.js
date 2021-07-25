@@ -138,7 +138,8 @@ module.exports = new GraphQLSchema({
           }
 
           let paginationQuerySting
-          if (!args.pagination) {
+          console.log(!args.pagination)
+          if (args.pagination === undefined) {
             paginationQuerySting = ' LIMIT 0 , 60'
           } else {
             paginationQuerySting = ' LIMIT ? , 10'
@@ -148,7 +149,7 @@ module.exports = new GraphQLSchema({
           querySting += orderQuerySting
           querySting += paginationQuerySting
 
-          // console.log(pool.format(querySting, queryBinding))
+          console.log(pool.format(querySting, queryBinding))
           const [result] = await pool.query(querySting, queryBinding)
           return result
         }
