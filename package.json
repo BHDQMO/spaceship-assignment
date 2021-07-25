@@ -1,0 +1,32 @@
+{
+  "name": "spaceship-assignment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BHDQMO/spaceship-assignment.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BHDQMO/spaceship-assignment/issues"
+  },
+  "homepage": "https://github.com/BHDQMO/spaceship-assignment#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^16.4.2",
+    "dataloader": "^2.0.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-graphql": "^0.12.0",
+    "graphql": "^15.5.1",
+    "mysql2": "^2.2.5",
+    "nodemon": "^2.0.12"
+  }
+}
